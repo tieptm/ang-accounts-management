@@ -1,0 +1,24 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "username": "tieptrac",
+      "personname": "Tiep Trac",
+      "gender": "male",
+      "address": "Cai Rang, Can Tho",
+      "email": "tmtiep2896@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "tractiep",
+      "personname": "Trac Tiep",
+      "gender": "female",
+      "address": "Ninh Kieu, Can Tho",
+      "email": "tieptrac@gmail.com"
+    }
+  ],
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ]
+}
+

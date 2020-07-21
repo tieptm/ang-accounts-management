@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "accounts-management"
+    }
+  },
+  "defaultProject": "accounts-management",
+  "cli": {
+    "analytics": "8d18f53a-eca1-4f76-a8f9-06aea7525304"
+  }
 }
