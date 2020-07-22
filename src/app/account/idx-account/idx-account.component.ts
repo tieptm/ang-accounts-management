@@ -2,6 +2,7 @@ import { AccountService } from './../../account.service';
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'src/app/account';
 import { Subscription } from 'rxjs';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-idx-account',
@@ -23,6 +24,10 @@ export class IdxAccountComponent implements OnInit {
     if(this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.accounts, event.previousIndex, event.currentIndex);
   }
 
   refreshAccount() {
