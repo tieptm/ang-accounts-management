@@ -1,36 +1,36 @@
 <legend>Tạo tài khoản</legend>
-<form action="" #createAccountForm="ngForm" (submit)="onSubmit(createAccountForm)">
+<form action="" #createAccountForm="ngForm" (submit)="createAccount()">
     <div class="form-group">
         <label for="">Tài khoản</label>
-        <input type="text" name="userName" id="" class="form-control" placeholder="Tài khoản chứa 8 ký tự, bao gồm kí tự a-z 0-9"
+        <input type="text" name="username" id="" class="form-control" placeholder="Tài khoản chứa 8 ký tự, bao gồm kí tự a-z 0-9"
             required
             minlength="8"
             maxlength="8"
             [pattern]="userNamePattern"
-            #userName="ngModel"
-            [(ngModel)]=createAccountForm.userName>
-        <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
-            <span *ngIf="userName.errors?.required" class="text-danger">
+            #username="ngModel"
+            [(ngModel)]=account.username>
+        <div *ngIf="username.invalid && (username.dirty || username.touched)">
+            <span *ngIf="username.errors?.required" class="text-danger">
                 Bạn cần nhập tài khoản
             </span>
-            <span *ngIf="(userName.errors?.minlength || userName.errors?.maxlength)" class="text-danger">
+            <span *ngIf="(username.errors?.minlength || username.errors?.maxlength)" class="text-danger">
                 Tài khoản phải chứa 8 ký tự
             </span>
-            <span *ngIf="!(userName.errors?.minlength || userName.errors?.maxlength) && userName.errors?.pattern" class="text-danger">
+            <span *ngIf="!(username.errors?.minlength || username.errors?.maxlength) && username.errors?.pattern" class="text-danger">
                 Tài khoản chỉ bao gồm các ký tự a-z 0-9"
             </span>
         </div>
     </div>
     <div class="form-group">
         <label for="">Họ tên</label>
-        <input type="text" name="personName" id="" class="form-control" placeholder="Tên tối đa 20 ký tự"
+        <input type="text" name="personname" id="" class="form-control" placeholder="Tên tối đa 20 ký tự"
         required
         minlength="1"
         maxlength="20"
-        #personName="ngModel"
-        [(ngModel)]=createAccountForm.personName>
-        <div *ngIf="personName.invalid && (personName.dirty || personName.touched)">
-            <span *ngIf="personName.errors?.required" class="text-danger">
+        #personname="ngModel"
+        [(ngModel)]=account.personname>
+        <div *ngIf="personname.invalid && (personname.dirty || personname.touched)">
+            <span *ngIf="personname.errors?.required" class="text-danger">
                 Bạn cần nhập họ tên
             </span>
         </div>
@@ -40,7 +40,7 @@
         <input type="date" name="dob" id="" class="form-control"
         required
         #dob="ngModel"
-        [(ngModel)]=createAccountForm.dob>
+        [(ngModel)]=account.dob>
         <div *ngIf="dob.invalid && (dob.dirty || dob.touched)">
             <span *ngIf="dob.errors?.required" class="text-danger">
                 Bạn cần nhập ngày sinh
@@ -54,7 +54,7 @@
                 <input class="form-check-input" type="radio" name="gender" id="" value="male" checked
                 required
                 #gender="ngModel"
-                [(ngModel)]=createAccountForm.gender> Nam
+                [(ngModel)]=account.gender> Nam
             </label>
         </div>
         <div class="form-check form-check-inline">
@@ -62,7 +62,7 @@
                 <input class="form-check-input" type="radio" name="gender" id="" value="female"
                 required
                 #gender="ngModel"
-                [(ngModel)]=createAccountForm.gender> Nữ
+                [(ngModel)]=account.gender> Nữ
             </label>
         </div>
     </div>
@@ -71,7 +71,7 @@
         <textarea class="form-control" name="address" id="" rows="3" placeholder="Tối đa 200 ký tự"
         required
         #address="ngModel"
-        [(ngModel)]=createAccountForm.address></textarea>
+        [(ngModel)]=account.address></textarea>
         <div *ngIf="address.invalid && (address.dirty || address.touched)">
             <span *ngIf="address.errors?.required" class="text-danger">
                 Bạn cần nhập địa chỉ
@@ -84,7 +84,7 @@
         required
         [pattern]="emailPattern"
         #email="ngModel"
-        [(ngModel)]=createAccountForm.email>
+        [(ngModel)]=account.email>
         <div *ngIf="email.invalid && (email.dirty || email.touched)">
             <span *ngIf="email.errors?.required" class="text-danger">
                 Bạn cần nhập email

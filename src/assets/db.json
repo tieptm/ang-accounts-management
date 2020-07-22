@@ -4,6 +4,7 @@
       "id": 1,
       "username": "tieptrac",
       "personname": "Tiep Trac",
+      "dob": "1996-08-02",
       "gender": "male",
       "address": "Cai Rang, Can Tho",
       "email": "tmtiep2896@gmail.com"
@@ -12,13 +13,29 @@
       "id": 2,
       "username": "tractiep",
       "personname": "Trac Tiep",
+      "dob": "1995-07-06",
       "gender": "female",
       "address": "Ninh Kieu, Can Tho",
       "email": "tieptrac@gmail.com"
+    },
+    {
+      "id": 3
+    },
+    {
+      "username": "dddddddd",
+      "personname": "sdfsdfsdsdsdsdfdsfds",
+      "dob": "2020-07-09",
+      "gender": "male",
+      "address": "asdfasffdsfdsfdsf",
+      "email": "tmtiep2896@gmail.com",
+      "id": 5
     }
   ],
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ]
 }
-

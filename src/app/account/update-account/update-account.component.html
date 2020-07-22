@@ -1,1 +1,98 @@
-<p>update-account works!</p>
+<legend>Cập nhật tài khoản</legend>
+<form action="" #createAccountForm="ngForm" (submit)="updateAccount()">
+    <div class="form-group">
+        <label for="">Tài khoản</label>
+        <input type="text" name="username" id="" class="form-control" placeholder="Tài khoản chứa 8 ký tự, bao gồm kí tự a-z 0-9"
+            required
+            minlength="8"
+            maxlength="8"
+            [pattern]="userNamePattern"
+            #username="ngModel"
+            [(ngModel)]=account.username>
+        <div *ngIf="username.invalid && (username.dirty || username.touched)">
+            <span *ngIf="username.errors?.required" class="text-danger">
+                Bạn cần nhập tài khoản
+            </span>
+            <span *ngIf="(username.errors?.minlength || username.errors?.maxlength)" class="text-danger">
+                Tài khoản phải chứa 8 ký tự
+            </span>
+            <span *ngIf="!(username.errors?.minlength || username.errors?.maxlength) && username.errors?.pattern" class="text-danger">
+                Tài khoản chỉ bao gồm các ký tự a-z 0-9"
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Họ tên</label>
+        <input type="text" name="personname" id="" class="form-control" placeholder="Tên tối đa 20 ký tự"
+        required
+        minlength="1"
+        maxlength="20"
+        #personname="ngModel"
+        [(ngModel)]=account.personname>
+        <div *ngIf="personname.invalid && (personname.dirty || personname.touched)">
+            <span *ngIf="personname.errors?.required" class="text-danger">
+                Bạn cần nhập họ tên
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Ngày sinh</label>
+        <input type="date" name="dob" id="" class="form-control"
+        required
+        #dob="ngModel"
+        [(ngModel)]=account.dob>
+        <div *ngIf="dob.invalid && (dob.dirty || dob.touched)">
+            <span *ngIf="dob.errors?.required" class="text-danger">
+                Bạn cần nhập ngày sinh
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Giới tính</label>&nbsp;
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="gender" id="" value="male" checked
+                required
+                #gender="ngModel"
+                [(ngModel)]=account.gender> Nam
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="gender" id="" value="female"
+                required
+                #gender="ngModel"
+                [(ngModel)]=account.gender> Nữ
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Địa chỉ</label>
+        <textarea class="form-control" name="address" id="" rows="3" placeholder="Tối đa 200 ký tự"
+        required
+        #address="ngModel"
+        [(ngModel)]=account.address></textarea>
+        <div *ngIf="address.invalid && (address.dirty || address.touched)">
+            <span *ngIf="address.errors?.required" class="text-danger">
+                Bạn cần nhập địa chỉ
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" name="email" id="" class="form-control" placeholder="tmtiep2896@gmail.com"
+        required
+        [pattern]="emailPattern"
+        #email="ngModel"
+        [(ngModel)]=account.email>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <span *ngIf="email.errors?.required" class="text-danger">
+                Bạn cần nhập email
+            </span>
+            <span *ngIf="!email.errors?.required && email.errors?.pattern" class="text-danger">
+                Địa chỉ email nhập không hợp lệ
+            </span>
+        </div>
+    </div>
+    <button class="btn btn-lg btn-primary" type="submit" [disabled]="createAccountForm.invalid">Cập nhật tài khoản</button>
+</form>
