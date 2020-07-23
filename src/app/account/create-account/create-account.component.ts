@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class CreateAccountComponent implements OnInit {
 
-  userNamePattern = /^[a-z]{8,8}$/i;
-  emailPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
-  account = new Account();
+  public userNamePattern = /^[a-z0-9]{8,8}$/i;
+  public emailPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+  public account = new Account();
 
   constructor(private accountService: AccountService, private router: Router) { }
 

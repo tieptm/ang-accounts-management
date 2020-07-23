@@ -28,7 +28,7 @@ export class AccountService {
   }
 
   updateAccount(account: Account):Observable<any> {
-    return this.http.put(this.baseURL + "/" + `${account.id}`, account);
+    return this.http.put<Account>(`${this.baseURL}` + 'accounts/' + `${account.id}`, account);
   }
 
   deleteCourse(id : number) : Observable<Account> {

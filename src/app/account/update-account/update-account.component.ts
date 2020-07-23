@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class UpdateAccountComponent implements OnInit {
 
-  public userNamePattern = /^[a-z]{8,8}$/i;
+  public userNamePattern = /^[a-z0-9]{8,8}$/i;
   public emailPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
 
   public subscription: Subscription;
@@ -40,7 +40,6 @@ export class UpdateAccountComponent implements OnInit {
 
   updateAccount() {
     this.accountService.updateAccount(this.account).subscribe(data => {
-      console.log(data);
       this.router.navigate(['/accounts'])
     });
   }
