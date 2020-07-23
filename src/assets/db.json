@@ -19,9 +19,6 @@
       "email": "tieptrac@gmail.com"
     },
     {
-      "id": 3
-    },
-    {
       "username": "dddddddd",
       "personname": "sdfsdfsdsdsdsdfdsfds",
       "dob": "2020-07-09",
@@ -29,13 +26,6 @@
       "address": "asdfasffdsfdsfdsf",
       "email": "tmtiep2896@gmail.com",
       "id": 5
-    }
-  ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
     }
   ]
 }

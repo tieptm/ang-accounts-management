@@ -8,16 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class AccountService {
 
-  baseURL: string = "http://localhost:3000/"
+  public baseURL: string = "http://localhost:3000/"
 
   constructor(private http: HttpClient) { }
 
   getAccounts(): Observable<Account[]> {
     return this.http.get<Account[]>(this.baseURL + 'accounts');
-  }
-
-  getAccount(id : number) : Observable<Account> {
-    return this.http.get<Account>(`${this.baseURL}/${id}`);
   }
 
   postAccount(account: Account): Observable<any> {
@@ -27,8 +23,12 @@ export class AccountService {
     return this.http.post(this.baseURL + 'accounts', body, {'headers': headers});
   }
 
+  getAccount(id : number) : Observable<Account> {
+    return this.http.get<Account>(`${this.baseURL}` + 'accounts/' + `${id}`);
+  }
+
   updateAccount(account: Account):Observable<any> {
-    return this.http.post(this.baseURL + "/" + `${account.id}`, account);
+    return this.http.put(this.baseURL + "/" + `${account.id}`, account);
   }
 
   deleteCourse(id : number) : Observable<Account> {

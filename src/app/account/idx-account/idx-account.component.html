@@ -55,8 +55,8 @@
                       <div class="card-body">
                         <p class="card-text">{{account.username}}</p>
                         <p class="card-text">{{account.email}}</p>
-                        <a href="#" class="btn btn-warning"><i class="fa fa-edit"></i></a>&nbsp;
-                        <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <button type="button" class="btn btn-warning" [routerLink]="[account.id, 'edit']"><i class="fa fa-edit"></i></button>&nbsp;
+                        <button type="button" class="btn btn-danger" (click)="onDeleteAccount(account.id)"><i class="fa fa-trash"></i></button>
                       </div>
                     </div>
                 </div>
